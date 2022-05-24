@@ -24,6 +24,9 @@
                 @if(config('schedule.view.table-fields.withoutOverlapping'))
                     <th scope="col" class="px-6 py-3">Without Overlapping</th>
                 @endif
+                @if(config('schedule.links'))
+                    <th scope="col" class="px-6 py-3">Links</th>
+                @endif
             </tr>
         </thead>
         <tbody>
@@ -73,12 +76,19 @@
                     @endif
                     @if(config('schedule.view.table-fields.evenInMaintenanceMode'))
                         <td class="px-6 py-4">
-                            @include($schedule->evenInMaintenanceMode ? "schedule::partials.icons.check" : "schedule::partials.icons.times")
+                            <x-icon-status :status="$schedule->evenInMaintenanceMode"/>
                         </td>
                     @endif
                     @if(config('schedule.view.table-fields.withoutOverlapping'))
                         <td class="px-6 py-4">
-                            @include($schedule->withoutOverlapping ? "schedule::partials.icons.check" : "schedule::partials.icons.times")
+                            <x-icon-status :status="$schedule->withoutOverlapping"/>
+                        </td>
+                    @endif
+                    @if(config('schedule.links'))
+                        <td class="px-6 py-4">
+                            @if(array_key_exists($schedule->description, config('schedule.links')))
+                                <a class="bg-blue-500 text-white uppercase p-3 m-2" href="{{ config('schedule.links.' . $schedule->description . '.url') }}">{{ config('schedule.links.' . $schedule->description . '.name', 'LINK') }}</a>
+                            @endif
                         </td>
                     @endif
                 </tr>

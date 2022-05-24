@@ -12,6 +12,13 @@ return [
         'auth',
     ],
 
+    'links' => [
+        //'description from an event / job' => [
+        //    'url' => url('hallo-sina'),
+        //    'name' => 'Click here to join the root.'
+        //]
+    ],
+
     'view' => [
         'title' => '@Schruptor - Scheduled Jobs List',
 
@@ -43,8 +50,14 @@ return [
             'total-jobs',
 
             'first-jobs-timezone',
+
+            'sinusrhythm'
         ],
     ],
 
-    'cache' => false,
+    'caching' => [
+        'status' => false,
+
+        'destination' => 'database',
+    ]
 ];
