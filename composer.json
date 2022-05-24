@@ -1,6 +1,6 @@
 {
     "name": "schruptor/schedule",
-    "description": "This package gives your users an overview what you scheduled jobs are.",
+    "description": "This package gives your users an overview what your scheduled jobs are.",
     "keywords": [
         "schruptor",
         "laravel",
