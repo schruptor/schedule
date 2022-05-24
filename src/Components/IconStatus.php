@@ -9,7 +9,8 @@ class IconStatus extends BaseComponent
 {
     public function __construct(
         public bool $status
-    ) { }
+    ) {
+    }
 
     public function render(): View
     {

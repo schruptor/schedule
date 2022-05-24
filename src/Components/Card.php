@@ -12,7 +12,8 @@ class Card extends BaseComponent
         public null|string|int|float $value = '',
         public string $icon = 'fa fa-user',
         public string $color = 'bg-green-600',
-    ) { }
+    ) {
+    }
 
     public function render(): View
     {

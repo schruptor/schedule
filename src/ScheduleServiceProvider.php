@@ -2,10 +2,10 @@
 
 namespace Schruptor\Schedule;
 
-use Spatie\LaravelPackageTools\Package;
 use Schruptor\Schedule\Components\Card;
 use Schruptor\Schedule\Components\Header;
 use Schruptor\Schedule\Components\IconStatus;
+use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class ScheduleServiceProvider extends PackageServiceProvider
