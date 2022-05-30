@@ -9,11 +9,12 @@ return [
 
     'route-middlewares' => [
         'web',
+
         'auth',
     ],
 
     'links' => [
-        //'description from an event / job' => [
+        //'unique description from an event / job' => [
         //    'url' => url('hallo-sina'),
         //    'name' => 'Click here to join the root.'
         //]
@@ -51,7 +52,7 @@ return [
 
             'first-jobs-timezone',
 
-            'sinusrhythm'
+            'sinusrhythm',
         ],
     ],
 
@@ -59,5 +60,7 @@ return [
         'status' => false,
 
         'destination' => 'database',
+
+        'format' => 'Y-m-d H:i:s',
     ]
 ];

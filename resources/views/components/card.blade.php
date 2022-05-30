@@ -6,7 +6,7 @@
         <div class="flex-1 text-right md:text-center">
             <h5 class="font-bold uppercase text-gray-500">{{ $title }}</h5>
             @if($value)
-                <h3 class="font-bold text-3xl">{{ $value }}</h3>
+                <h3 class="font-bold text-3xl">{!! $value !!}</h3>
             @endif
         </div>
     </div>

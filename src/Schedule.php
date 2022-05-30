@@ -3,12 +3,33 @@
 namespace Schruptor\Schedule;
 
 use Illuminate\Events\Dispatcher;
+use Illuminate\Support\Collection;
+use Schruptor\Schedule\Eloquent\Schedule as ScheduleEloquentModel;
 
 class Schedule
 {
-    public static function get(): \Illuminate\Support\Collection
+    public static function get(): Collection
     {
-        $kernel = new (config('schedule.kernel-class'))(app(), new Dispatcher());
+        if (config('schedule.caching.destination') === 'database') {
+            return (new self)->getSchedulesFromDatabase();
+        }
+
+        return (new self)->getSchedulesFromRuntime();
+    }
+
+    public static function getFromRuntime(): Collection
+    {
+        return (new self)->getSchedulesFromRuntime();
+    }
+
+    private function getSchedulesFromDatabase(): Collection
+    {
+        return ScheduleEloquentModel::all();
+    }
+
+    private function getSchedulesFromRuntime(): Collection
+    {
+        new (config('schedule.kernel-class'))(app(), new Dispatcher());
 
         $schedule = app(config('schedule.schedule-class'));
 

@@ -12,8 +12,23 @@
 
             <div class="w-full px-4 md:px-0 md:mt-8 mb-10 text-gray-800 leading-normal">
 
-                @if(config('schedule.view.cards'))
+                @if(config('schedule.caching.status'))
+                    <div class="flex flex-wrap">
+                        <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+                            @include("schedule::partials.cards.caching-status")
+                        </div>
 
+                        <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+                            @include("schedule::partials.cards.caching-destination")
+                        </div>
+
+                        <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+                            @include("schedule::partials.cards.caching-last-cache")
+                        </div>
+                    </div>
+                @endif
+
+                @if(config('schedule.view.cards'))
                     <div class="flex flex-wrap">
                         @foreach(config('schedule.view.cards') as $card)
                             @if (Str::contains($card, '/') || Str::startsWith($card, 'custom:'))
