@@ -11,15 +11,15 @@ class Schedule
     public static function get(): Collection
     {
         if (config('schedule.caching.destination') === 'database') {
-            return (new self)->getSchedulesFromDatabase();
+            return (new self())->getSchedulesFromDatabase();
         }
 
-        return (new self)->getSchedulesFromRuntime();
+        return (new self())->getSchedulesFromRuntime();
     }
 
     public static function getFromRuntime(): Collection
     {
-        return (new self)->getSchedulesFromRuntime();
+        return (new self())->getSchedulesFromRuntime();
     }
 
     private function getSchedulesFromDatabase(): Collection

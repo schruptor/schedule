@@ -2,9 +2,9 @@
 
 namespace Schruptor\Schedule\Http;
 
-use Illuminate\Contracts\View\View;
 use Illuminate\View\Factory;
 use Schruptor\Schedule\Schedule;
+use Illuminate\Contracts\View\View;
 
 class ScheduleController
 {

@@ -3,9 +3,9 @@
 namespace Schruptor\Schedule;
 
 use Schruptor\Schedule\Components\Card;
+use Spatie\LaravelPackageTools\Package;
 use Schruptor\Schedule\Components\Header;
 use Schruptor\Schedule\Components\IconStatus;
-use Spatie\LaravelPackageTools\Package;
 use Schruptor\Schedule\Console\CacheRoutesCommand;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 

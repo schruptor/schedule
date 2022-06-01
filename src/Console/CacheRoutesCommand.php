@@ -13,7 +13,7 @@ class CacheRoutesCommand extends Command
 
     public function handle(): bool
     {
-        if(!config('schedule.caching.status')) {
+        if (! config('schedule.caching.status')) {
             return false;
         }
 
