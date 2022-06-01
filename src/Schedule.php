@@ -12,7 +12,8 @@ class Schedule
     {
         if (config('schedule.caching.status') === true) {
             return match (config('schedule.caching.destination')) {
-                'database' => (new self())->getSchedulesFromDatabase()
+                'database' => (new self())->getSchedulesFromDatabase(),
+                default => (new self())->getSchedulesFromRuntime(),
             };
         }
 
