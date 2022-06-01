@@ -11,15 +11,17 @@ class CacheRoutesCommand extends Command
     protected $signature = 'schruptor-schedule:cache-route';
     protected $description = 'This command caches your routes into a datasource of your choice.';
 
-    public function handle()
+    public function handle(): bool
     {
         if(!config('schedule.caching.status')) {
-            return;
+            return false;
         }
 
         $this->purgeTable();
 
         $this->saveSchedules();
+
+        return true;
     }
 
     private function saveSchedules(): void
