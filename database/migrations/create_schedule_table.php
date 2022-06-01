@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('schedule', function (Blueprint $table) {
             $table->id();
-            $table->string('command');
+            $table->string('command')->nullable();
             $table->string('expression');
             $table->boolean('evenInMaintenanceMode');
             $table->boolean('withoutOverlapping');
