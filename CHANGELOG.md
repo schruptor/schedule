@@ -1,3 +1,7 @@
 # Changelog
 
 All notable changes to `schedule` will be documented in this file.
+
+## 0.2.0 - 2022-06-01
+
+This version implements caching in a given database.
